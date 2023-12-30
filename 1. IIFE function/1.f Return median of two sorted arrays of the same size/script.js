@@ -1,0 +1,17 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////-------------------- 1.f Return median of two sorted arrays of the same size.----------------/////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const findMedian = (function medianOfArray(arr1, arr2) {
+  const mergedArray = [...arr1, ...arr2].sort((a, b) => a - b);
+  const midInd = Math.floor(mergedArray.length / 2);
+  let median;
+  if (mergedArray.length % 2 == 0) {
+    median = (mergedArray[midInd - 1] + mergedArray[midInd]) / 2;
+  } else {
+    median = mergedArray[midInd];
+  }
+
+  return median;
+})([3, 4, 1, 6, 5, 2, 7], [9, 11, 10, 8, 12, 13, 14]);
+console.log(findMedian);
